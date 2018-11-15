@@ -1,0 +1,194 @@
+@import url(https://fonts.googleapis.com/css?family=Muli:400,700);
+
+
+
+$body-color: black;
+$netflix-red: #B9090B;
+
+body {
+  color: $body-color;
+  font-family: 'Muli', sans-serif;
+  margin: 15px;
+}
+
+p {
+  margin-top: 0px;
+}
+
+.fl {
+  float: left;
+}
+
+.headContainer {
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+
+.leftSide {
+  float:left;
+}
+
+.netflix {
+  width: 200px;
+  margin: 15px 0px;
+}
+
+.netflix-loader {
+  width: 150px;
+  margin: 15px 0px;
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  tr {
+    th {
+      background-color: $netflix-red;
+      color: white;
+
+    }
+    td, th {
+      border: 1px solid #ccc;
+      padding: 10px;
+      font-size: 16px;
+      text-align: left;
+      a {
+        text-decoration: none;
+        color: #000;
+        &:hover {
+          color: $netflix-red;
+        }
+      }
+      &:last-child {
+        text-align: right;
+      }
+    }
+  }
+  thead {
+    tr {
+      th {
+        &:first-child {
+          width: 75%;
+        }
+      }
+    }
+  }
+  tfoot {
+    tr {
+      td {
+        &:last-child {
+          text-align: center;
+        }
+        div {
+          display: inline-block;
+          margin: 0px auto;
+          a {
+            display: inline-block;
+            padding: 5px;
+            margin: 0 2px;
+            min-width: 20px;
+            text-align: center;
+            cursor: pointer;
+            &:hover, &.active {
+              text-decoration: none;
+              background-color: $netflix-red;
+              border-radius: 4px;
+              color: white;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+input{
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.input {
+  margin-top: 80px;
+  margin-bottom: 10px;
+  float:right;
+}
+
+.summary {
+  float: right;
+  padding: 5px;
+}
+
+#loader-container {
+  width: 200px;
+  height: 200px;
+  color:$netflix-red;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  border: 5px solid $netflix-red;
+  border-radius: 50%;
+  -webkit-animation: borderScale 1s infinite ease-in-out;
+  animation: borderScale 1s infinite ease-in-out;
+}
+
+#loadingText {
+  font-weight: bold;
+  font-size: 2em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+@-webkit-keyframes borderScale {
+  0% {
+    border: 5px solid white;
+  }
+  50% {
+    border: 25px solid $netflix-red;
+  }
+  100% {
+    border: 5px solid white;
+  }
+}
+
+@keyframes borderScale {
+  0% {
+    border: 5px solid white;
+  }
+  50% {
+    border: 25px solid $netflix-red;
+  }
+  100% {
+    border: 5px solid white;
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+  body, p {
+      text-align: center
+  }
+
+  .leftSide, .input {
+    float: none;
+  }
+  
+  .input {
+    margin-top: 40px;
+    input {
+      width: 60%
+    }
+  }
+
+  
+
+}
